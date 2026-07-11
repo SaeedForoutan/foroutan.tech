@@ -255,6 +255,10 @@ code, pre, kbd, samp {
 }
 
 .nav {
+    /* Positioned so .nav-menu-panel can anchor to the whole bar — anchoring
+       to the hamburger itself pushes the panel off-screen on narrow
+       viewports (the button sits left of the nav-tools icon row). */
+    position: relative;
     max-width: var(--max);
     margin: 0 auto;
     padding: 0.85rem 1.25rem;
@@ -303,7 +307,6 @@ code, pre, kbd, samp {
 }
 
 .nav-menu {
-    position: relative;
     display: none;
     margin-left: auto;
 }
@@ -343,8 +346,8 @@ code, pre, kbd, samp {
 
 .nav-menu-panel {
     position: absolute;
-    top: calc(100% + 0.65rem);
-    right: 0;
+    top: calc(100% + 0.5rem);
+    right: 1.25rem;
     z-index: 30;
     display: grid;
     min-width: min(18rem, calc(100vw - 2rem));
