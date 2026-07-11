@@ -4,6 +4,20 @@ A blog and personal site theme for Astro with a terminal look and 18 switchable 
 
 Based on the website theme from [herdr](https://github.com/ogulcancelik/herdr) by Oğulcan Çelik, distributed under the same AGPL-3.0-or-later license.
 
+## Screenshots
+
+![Home page](docs/screenshots/home.png)
+
+![A blog post, with the table of contents generated from its headings](docs/screenshots/post.png)
+
+| Blog index | About |
+| --- | --- |
+| ![Blog index](docs/screenshots/blog.png) | ![About page](docs/screenshots/about.png) |
+
+| Theme switcher | Search (Ctrl/Cmd+K) |
+| --- | --- |
+| ![Theme switcher overlay listing the color palettes](docs/screenshots/theme-switcher.png) | ![Search terminal with a query and a matched result](docs/screenshots/search.png) |
+
 ## Features
 
 - 18 color palettes (Catppuccin, Nord, Dracula, Gruvbox, Tokyo Night, Rosé Pine, Kanagawa, Solarized, and others), defined as plain CSS variables and switchable at runtime
