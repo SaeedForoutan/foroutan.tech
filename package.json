@@ -2,6 +2,14 @@
   "name": "astro-palette",
   "private": true,
   "license": "AGPL-3.0-or-later",
+  "description": "A minimal Astro theme for personal sites and blogs",
+  "keywords": [
+    "astro",
+    "withastro",
+    "astro-theme",
+    "astro-template",
+    "blog"
+  ],
   "type": "module",
   "scripts": {
     "dev": "astro dev",
