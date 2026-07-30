@@ -1,4 +1,4 @@
-# astro-palette
+# Astro Palette
 
 A blog and personal site theme for Astro with a terminal look and 18 switchable color palettes. The build output is fully static, with no client-side framework and no analytics.
 
