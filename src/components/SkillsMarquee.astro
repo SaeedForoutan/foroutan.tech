@@ -1,21 +1,17 @@
 ---
-// Replace with your own skills, tools, or interests.
-const skills = [
-  'HTML', 'CSS', 'JavaScript', 'TypeScript',
-  'Python', 'Go', 'Rust', 'Bash',
-  'Git', 'GitHub Actions', 'Docker', 'Kubernetes',
-  'AWS', 'Azure', 'GCP',
-  'PostgreSQL', 'Redis', 'GraphQL', 'REST APIs',
-  'Linux', 'Terraform', 'Ansible', 'CI/CD',
-];
+import { skills, slugifyTag } from '../lib/tags';
 ---
 
 <section class="skills-marquee" aria-label="Skills">
   <ul class="visually-hidden">
-    {skills.map((skill) => <li>{skill}</li>)}
+    {skills.map((skill) => (
+      <li><a href={`/tags/${slugifyTag(skill)}/`}>{skill}</a></li>
+    ))}
   </ul>
   {/* Two copies make the loop seamless; hidden from readers and search. */}
   <div class="skills-track" aria-hidden="true" data-pagefind-ignore>
-    {[...skills, ...skills].map((skill) => <span class="skills-item">{skill}</span>)}
+    {[...skills, ...skills].map((skill) => (
+      <a class="skills-item" href={`/tags/${slugifyTag(skill)}/`}>{skill}</a>
+    ))}
   </div>
 </section>

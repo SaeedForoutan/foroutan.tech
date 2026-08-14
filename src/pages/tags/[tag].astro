@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import { skills, slugifyTag } from '../../lib/tags';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const names = new Map<string, string>();
+  for (const post of posts) {
+    for (const tag of post.data.tags ?? []) {
+      names.set(slugifyTag(tag), tag);
+    }
+  }
+  for (const skill of skills) names.set(slugifyTag(skill), skill);
+
+  return [...names].map(([slug, name]) => ({ params: { tag: slug }, props: { name } }));
+}
+
+const { name } = Astro.props;
+const slug = Astro.params.tag!;
+
+const taggedPosts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .filter((post) => (post.data.tags ?? []).some((tag) => slugifyTag(tag) === slug))
+  .map((post) => ({ ...post, slug: post.id.replace(/\.(md|mdx)$/i, '') }))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout
+  title={`#${slug} — Your Name`}
+  description={`Posts tagged "${name}".`}
+  canonicalPath={`/tags/${slug}/`}
+>
+  <main class="content-shell">
+    <section class="page-hero">
+      <p class="eyebrow"><span class="status-dot dot-blue"></span>tag</p>
+      <h1># {name}</h1>
+      <p class="hero-lede">
+        {taggedPosts.length === 0
+          ? 'Nothing here yet — check back soon.'
+          : `${taggedPosts.length} post${taggedPosts.length === 1 ? '' : 's'} tagged ${name}.`}{' '}
+        <a class="inline-link" href="/tags/">all tags</a>
+      </p>
+    </section>
+
+    {taggedPosts.length > 0 ? (
+      <section class="section" aria-label="Posts">
+        <div class="post-list">
+          {taggedPosts.map((post) => (
+            <article class="post-card">
+              <a class="post-card-link" href={`/blog/${post.slug}/`}>
+                <div>
+                  <h2>{post.data.title}</h2>
+                  <p>{post.data.description}</p>
+                  <p class="post-card-meta">{post.data.date.toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</p>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+    ) : (
+      <section class="section">
+        <p style="color: var(--muted); font-family: var(--mono);">Nothing tagged # {name} yet.</p>
+      </section>
+    )}
+  </main>
+</Layout>

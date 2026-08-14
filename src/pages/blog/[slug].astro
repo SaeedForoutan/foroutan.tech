@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../components/Layout.astro';
+import { slugifyTag } from '../../lib/tags';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -65,6 +66,9 @@ const postSchema = JSON.stringify({
                 timeZone: 'UTC',
               })}
             </time>
+            {post.data.tags.map((tag) => (
+              <a href={`/tags/${slugifyTag(tag)}/`}>#{slugifyTag(tag)}</a>
+            ))}
           </p>
           <h1>{post.data.title}</h1>
           <p>{post.data.description}</p>
