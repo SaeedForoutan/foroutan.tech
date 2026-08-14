@@ -2,21 +2,9 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../components/Layout.astro';
 import TypedLede from '../../components/TypedLede.astro';
-import { skills, slugifyTag } from '../../lib/tags';
+import { getAllTags } from '../../lib/tags';
 
-const posts = (await getCollection('blog')).filter((post) => !post.data.draft);
-
-const counts = new Map<string, number>();
-for (const post of posts) {
-  for (const tag of post.data.tags ?? []) {
-    const slug = slugifyTag(tag);
-    counts.set(slug, (counts.get(slug) ?? 0) + 1);
-  }
-}
-
-const tags = [...new Set(skills.map(slugifyTag))];
-for (const slug of counts.keys()) if (!tags.includes(slug)) tags.push(slug);
-tags.sort();
+const tags = getAllTags(await getCollection('blog'));
 ---
 
 <Layout
@@ -32,8 +20,8 @@ tags.sort();
 
     <section class="section" aria-label="Tags">
       <div class="tag-cloud">
-        {tags.map((slug) => (
-          <a class="tag" href={`/tags/${slug}/`}>#{slug} {counts.has(slug) && <span class="tag-count">{counts.get(slug)}</span>}</a>
+        {tags.map(({ slug, name, count }) => (
+          <a class="tag" href={`/tags/${slug}/`}>#{name} {count > 0 && <span class="tag-count">{count}</span>}</a>
         ))}
       </div>
     </section>

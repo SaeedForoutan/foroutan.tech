@@ -3,11 +3,10 @@ import { getCollection } from 'astro:content';
 import Layout from '../../components/Layout.astro';
 import TypedLede from '../../components/TypedLede.astro';
 import SkillsMarquee from '../../components/SkillsMarquee.astro';
-import { slugifyTag } from '../../lib/tags';
+import PostCard from '../../components/PostCard.astro';
 
 const posts = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
-  .map((post) => ({ ...post, slug: post.id.replace(/\.(md|mdx)$/i, '') }))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
@@ -27,24 +26,7 @@ const posts = (await getCollection('blog'))
         <p style="color: var(--muted); font-family: var(--mono);">No posts yet, check back soon.</p>
       ) : (
         <div class="post-list">
-          {posts.map((post, index) => (
-            <article class="post-card">
-              <a class="post-card-link" href={`/blog/${post.slug}/`}>
-                <div>
-                  <h2>{post.data.title}{index === 0 && <span class="tag-latest">latest</span>}</h2>
-                  <p>{post.data.description}</p>
-                  <p class="post-card-meta">{post.data.date.toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</p>
-                  {post.data.tags.length > 0 && (
-                    <p class="post-tags">
-                      {post.data.tags.map((tag) => (
-                        <a class="tag" href={`/tags/${slugifyTag(tag)}/`}>#{slugifyTag(tag)}</a>
-                      ))}
-                    </p>
-                  )}
-                </div>
-              </a>
-            </article>
-          ))}
+          {posts.map((post, index) => <PostCard post={post} latest={index === 0} />)}
         </div>
       )}
     </section>

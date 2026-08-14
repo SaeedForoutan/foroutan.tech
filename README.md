@@ -50,7 +50,7 @@ The theme ships with placeholder values. Search the project for `example.com`, `
 - `src/components/Layout.astro`: site name, social links, footer
 - `src/pages/index.astro`: tagline and person schema
 - `src/pages/about.astro`: bio and education
-- `src/lib/tags.ts`: skills list for the marquee, which also seed the `/tags/` archive
+- `src/lib/tags.ts`: skills list for the marquee, which also seeds the `/tags/` archive
 - `src/pages/rss.xml.ts` and `src/pages/blog/[slug].astro`: feed and author metadata
 - `public/robots.txt` and `public/.well-known/security.txt`: domain and contact
 - `public/assets/og.png`: social preview image, 1200x630 (a plain placeholder is included)
