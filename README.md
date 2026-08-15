@@ -24,6 +24,7 @@ Based on the website theme from [herdr](https://github.com/ogulcancelik/herdr) b
 
 - 18 color palettes (Catppuccin, Nord, Dracula, Gruvbox, Tokyo Night, Rosé Pine, Kanagawa, Solarized, and others), defined as plain CSS variables and switchable at runtime
 - Home, blog, and about pages, an RSS feed, and a sitemap
+- Tags: optional per-post tags, a browsable `/tags/` archive, and tag chips on posts
 - Client-side search via [Pagefind](https://pagefind.app), opened with Ctrl/Cmd+K, with shell-style history recall on the arrow keys
 - Table of contents on posts, generated from level-two headings
 - Optional [Remark42](https://remark42.com) comments
@@ -49,7 +50,7 @@ The theme ships with placeholder values. Search the project for `example.com`, `
 - `src/components/Layout.astro`: site name, social links, footer
 - `src/pages/index.astro`: tagline and person schema
 - `src/pages/about.astro`: bio and education
-- `src/components/SkillsMarquee.astro`: skills list
+- `src/lib/tags.ts`: skills list for the marquee, which also seeds the `/tags/` archive
 - `src/pages/rss.xml.ts` and `src/pages/blog/[slug].astro`: feed and author metadata
 - `public/robots.txt` and `public/.well-known/security.txt`: domain and contact
 - `public/assets/og.png`: social preview image, 1200x630 (a plain placeholder is included)
@@ -58,7 +59,7 @@ Comments stay disabled unless you run a Remark42 instance. The configuration is 
 
 ## Writing posts
 
-Posts are markdown files in `src/content/blog/` with `title`, `description`, `date`, and optional `draft` frontmatter. `example-post.md` shows the frontmatter and the supported markdown.
+Posts are markdown files in `src/content/blog/` with `title`, `description`, `date`, optional `tags`, and optional `draft` frontmatter. Each tag links to its archive page under `/tags/`. `example-post.md` shows the frontmatter and the supported markdown.
 
 ## Project structure
 
@@ -66,7 +67,8 @@ Posts are markdown files in `src/content/blog/` with `title`, `description`, `da
 src/
   components/     Layout (nav, search, theme switcher), TypedLede, SkillsMarquee
   content/blog/   posts as markdown
-  pages/          index (home), blog/, about, 404, rss
+  lib/            tags: skills list and tag helpers
+  pages/          index (home), blog/, tags/, about, 404, rss
 public/
   css/style.css   all styling, including palette definitions
   assets/         font, og image

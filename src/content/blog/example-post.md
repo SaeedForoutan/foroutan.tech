@@ -2,10 +2,15 @@
 title: "An Example Post"
 description: "A sample post showing the frontmatter fields and the markdown features this site supports."
 date: 2026-01-01
+tags:
+  - Astro
+  - Markdown
 draft: false
 ---
 
 This is an example post. Every post is a markdown file in `src/content/blog/` with four frontmatter fields: `title`, `description`, `date`, and an optional `draft` flag. Set `draft: true` to keep a post out of the build while you work on it.
+
+Posts can also list any number of `tags`. Each tag becomes a chip on the post and links to its own archive page under `/tags/`, alongside the skills marquee at the bottom of the site.
 
 The opening paragraph before the first heading works well as an introduction. It shows up in search results and gives readers a reason to keep going.
 

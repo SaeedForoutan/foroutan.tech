@@ -3,10 +3,10 @@ import { getCollection } from 'astro:content';
 import Layout from '../components/Layout.astro';
 import TypedLede from '../components/TypedLede.astro';
 import SkillsMarquee from '../components/SkillsMarquee.astro';
+import { formatPostDate, postSlug } from '../lib/posts';
 
 const posts = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
-  .map((post) => ({ ...post, slug: post.id.replace(/\.(md|mdx)$/i, '') }))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 
@@ -43,9 +43,9 @@ const personSchema = JSON.stringify({
         <nav class="commit-tree" aria-label="Recent posts">
           <a class="commit-tree-head" href="/blog/" title="All posts">Blog</a>
           {posts.map((post) => (
-            <a href={`/blog/${post.slug}/`}>
+            <a href={`/blog/${postSlug(post)}/`}>
               {post.data.title}
-              <span class="commit-tree-date">{post.data.date.toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</span>
+              <span class="commit-tree-date">{formatPostDate(post.data.date)}</span>
             </a>
           ))}
           <a href="/about/">About</a>
