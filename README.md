@@ -1,6 +1,6 @@
 # Astro Palette
 
-A blog and personal site theme for Astro with a terminal look and 18 switchable color palettes. The build output is fully static, with no client-side framework and no analytics.
+A blog and personal site theme for Astro with a terminal look and 30 switchable color palettes. The build output is fully static, with no client-side framework and no analytics.
 
 **[Demo](https://astro-palette.8limb.dev/)**
 
@@ -22,13 +22,25 @@ Based on the website theme from [herdr](https://github.com/ogulcancelik/herdr) b
 
 ## Features
 
-- 18 color palettes (Catppuccin, Nord, Dracula, Gruvbox, Tokyo Night, Rosé Pine, Kanagawa, Solarized, and others), defined as plain CSS variables and switchable at runtime
+- [30 color palettes](#palettes), defined as plain CSS variables and switchable at runtime
 - Home, blog, and about pages, an RSS feed, and a sitemap
 - A browsable `/tags/` archive, and tag chips on posts
 - Client-side search via [Pagefind](https://pagefind.app), opened with Ctrl/Cmd+K, with shell-style history recall on the arrow keys
 - Table of contents on posts, generated from level-two headings
 - Optional [Remark42](https://remark42.com) comments
 - JetBrains Mono throughout, with code blocks highlighted to match the active palette
+
+## Palettes
+
+Open the switcher with the pill in the bottom-left corner, which shows the active palette's name. Arrow keys preview a palette live, Enter commits it, and Escape reverts to the previous one. The choice is saved to `localStorage`; with nothing saved, the palette follows `prefers-color-scheme` (Vesper when dark, Rose Pine Dawn when light).
+
+**Dark (19)** — Catppuccin, Terminal, Tokyo Night, Dracula, Nord, Gruvbox, One Dark, Solarized, Kanagawa, Rose Pine, Vesper, Everforest, Ayu Dark, GitHub Dark, Monokai Pro, Night Owl, Oxocarbon, Poimandres, Palenight
+
+**Light (11)** — Catppuccin Latte, Tokyo Day, Gruvbox Light, One Light, Solarized Light, Kanagawa Lotus, Rose Pine Dawn, Everforest Light, Ayu Light, GitHub Light, Monokai Pro Light
+
+Colors are taken from each scheme's published palette rather than sampled from screenshots. Code blocks follow the active palette: `astro.config.mjs` sets Shiki's `css-variables` theme, and the `--astro-code-*` variables are mapped onto the palette in `style.css`.
+
+To add one, define a `[data-palette="your-name"]` block in `public/css/style.css` alongside the others, and add a matching `<button role="option" data-value="your-name">` to the switcher list in `src/components/Layout.astro`. The switcher builds itself from those buttons, so nothing else needs wiring. A block sets 20 variables — background and surface tones, four text weights, two border weights, four accents, and the terminal tones; copy an existing block of the same lightness as a starting point. Dark palettes also need their name adding to the `--logo-filter` rule that inverts the logo.
 
 ## Getting started
 

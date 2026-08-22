@@ -178,6 +178,93 @@
   --term-bg: #101010; --term-active-bg: #232323; --term-border: #282828; --term-text: #ffffff; --term-muted: #5c5c5c; --term-prompt: #ffc799;
   --term-cmd: #99ffe4; --term-str: #ffc799;
 }
+[data-palette="everforest"] {
+  --bg: #2d353b; --bg-elevated: #343f44; --ink: #e3dac4; --ink-soft: #d3c6aa;
+  --muted: #9da9a0; --muted-2: #7a8478; --line: #475258; --line-strong: #56635f;
+  --accent: #a7c080; --green: #83c092; --yellow: #dbbc7f; --red: #e67e80;
+  --term-bg: #2d353b; --term-active-bg: #3d484d; --term-border: #475258; --term-text: #d3c6aa; --term-muted: #7a8478; --term-prompt: #a7c080;
+  --term-cmd: #83c092; --term-str: #dbbc7f;
+}
+[data-palette="everforest-light"] {
+  --bg: #fdf6e3; --bg-elevated: #f4f0d9; --ink: #2d353b; --ink-soft: #5c6a72;
+  --muted: #829181; --muted-2: #a6b0a0; --line: #e0dcc7; --line-strong: #bdc3af;
+  --accent: #8da101; --green: #35a77c; --yellow: #dfa000; --red: #f85552;
+  --term-bg: #fdf6e3; --term-active-bg: #efebd4; --term-border: #e0dcc7; --term-text: #5c6a72; --term-muted: #a6b0a0; --term-prompt: #8da101;
+  --term-cmd: #35a77c; --term-str: #dfa000;
+}
+[data-palette="ayu"] {
+  --bg: #10141c; --bg-elevated: #141821; --ink: #d9d7d0; --ink-soft: #bfbdb6;
+  --muted: #6c7380; --muted-2: #555e73; --line: #1b1f29; --line-strong: #475266;
+  --accent: #e6b450; --green: #aad94c; --yellow: #e6c08a; --red: #d95757;
+  --term-bg: #10141c; --term-active-bg: #161a24; --term-border: #1b1f29; --term-text: #bfbdb6; --term-muted: #555e73; --term-prompt: #e6b450;
+  --term-cmd: #aad94c; --term-str: #e6c08a;
+}
+[data-palette="ayu-light"] {
+  --bg: #fcfcfc; --bg-elevated: #f8f9fa; --ink: #10141c; --ink-soft: #5c6166;
+  --muted: #828e9f; --muted-2: #adaeb1; --line: #eaedef; --line-strong: #d1d6dc;
+  /* Ayu Light's own accent (#f29718) is a UI fill, not a text color -- it
+     lands under 2.5:1 on --bg, so links would be unreadable. Using syntax
+     .entity from the same upstream ramp, which is Ayu Light's link color. */
+  --accent: #399ee6; --green: #86b300; --yellow: #f2a300; --red: #e65050;
+  --term-bg: #fcfcfc; --term-active-bg: #e8ebef; --term-border: #eaedef; --term-text: #5c6166; --term-muted: #adaeb1; --term-prompt: #399ee6;
+  --term-cmd: #86b300; --term-str: #f2a300;
+}
+[data-palette="github-dark"] {
+  --bg: #0d1117; --bg-elevated: #161b22; --ink: #f0f6fc; --ink-soft: #e6edf3;
+  --muted: #8b949e; --muted-2: #6e7681; --line: #30363d; --line-strong: #484f58;
+  --accent: #58a6ff; --green: #3fb950; --yellow: #d29922; --red: #f85149;
+  --term-bg: #0d1117; --term-active-bg: #21262d; --term-border: #30363d; --term-text: #e6edf3; --term-muted: #6e7681; --term-prompt: #58a6ff;
+  --term-cmd: #3fb950; --term-str: #d29922;
+}
+[data-palette="github-light"] {
+  --bg: #ffffff; --bg-elevated: #f6f8fa; --ink: #010409; --ink-soft: #1f2328;
+  --muted: #656d76; --muted-2: #8c959f; --line: #d0d7de; --line-strong: #afb8c1;
+  --accent: #0969da; --green: #1a7f37; --yellow: #9a6700; --red: #cf222e;
+  --term-bg: #ffffff; --term-active-bg: #eaeef2; --term-border: #d0d7de; --term-text: #1f2328; --term-muted: #8c959f; --term-prompt: #0969da;
+  --term-cmd: #1a7f37; --term-str: #9a6700;
+}
+[data-palette="monokai-pro"] {
+  --bg: #2d2a2e; --bg-elevated: #353136; --ink: #fcfcfa; --ink-soft: #fcfcfa;
+  --muted: #939293; --muted-2: #727072; --line: #403e41; --line-strong: #5b595c;
+  --accent: #ffd866; --green: #a9dc76; --yellow: #fc9867; --red: #ff6188;
+  --term-bg: #2d2a2e; --term-active-bg: #3a363b; --term-border: #403e41; --term-text: #fcfcfa; --term-muted: #727072; --term-prompt: #ffd866;
+  --term-cmd: #a9dc76; --term-str: #fc9867;
+}
+[data-palette="monokai-pro-light"] {
+  --bg: #faf4f2; --bg-elevated: #ede7e5; --ink: #29242a; --ink-soft: #29242a;
+  --muted: #706b6e; --muted-2: #918c8e; --line: #d3cdcc; --line-strong: #bfb9ba;
+  --accent: #cc7a0a; --green: #269d69; --yellow: #e16032; --red: #e14775;
+  --term-bg: #faf4f2; --term-active-bg: #ede7e5; --term-border: #d3cdcc; --term-text: #29242a; --term-muted: #918c8e; --term-prompt: #cc7a0a;
+  --term-cmd: #269d69; --term-str: #e16032;
+}
+[data-palette="night-owl"] {
+  --bg: #011627; --bg-elevated: #0b2942; --ink: #c5e4fd; --ink-soft: #d6deeb;
+  --muted: #637777; --muted-2: #4b6479; --line: #1d3b53; --line-strong: #5f7e97;
+  --accent: #82aaff; --green: #addb67; --yellow: #ecc48d; --red: #ef5350;
+  --term-bg: #011627; --term-active-bg: #0e293f; --term-border: #1d3b53; --term-text: #d6deeb; --term-muted: #4b6479; --term-prompt: #82aaff;
+  --term-cmd: #addb67; --term-str: #ecc48d;
+}
+[data-palette="oxocarbon"] {
+  --bg: #161616; --bg-elevated: #262626; --ink: #ffffff; --ink-soft: #f2f4f8;
+  --muted: #8d8d8d; --muted-2: #6f6f6f; --line: #393939; --line-strong: #525252;
+  --accent: #33b1ff; --green: #42be65; --yellow: #ff832b; --red: #ee5396;
+  --term-bg: #161616; --term-active-bg: #333333; --term-border: #393939; --term-text: #f2f4f8; --term-muted: #6f6f6f; --term-prompt: #33b1ff;
+  --term-cmd: #42be65; --term-str: #ff832b;
+}
+[data-palette="poimandres"] {
+  --bg: #1b1e28; --bg-elevated: #252b37; --ink: #ffffff; --ink-soft: #e4f0fb;
+  --muted: #a6accd; --muted-2: #767c9d; --line: #303340; --line-strong: #506477;
+  --accent: #89ddff; --green: #5de4c7; --yellow: #fffac2; --red: #d0679d;
+  --term-bg: #1b1e28; --term-active-bg: #2a2f3d; --term-border: #303340; --term-text: #e4f0fb; --term-muted: #767c9d; --term-prompt: #89ddff;
+  --term-cmd: #5de4c7; --term-str: #fffac2;
+}
+[data-palette="palenight"] {
+  --bg: #292d3e; --bg-elevated: #31364a; --ink: #ffffff; --ink-soft: #eeffff;
+  --muted: #a6accd; --muted-2: #676e95; --line: #2e3245; --line-strong: #4e5579;
+  --accent: #82aaff; --green: #c3e88d; --yellow: #ffcb6b; --red: #f07178;
+  --term-bg: #292d3e; --term-active-bg: #313850; --term-border: #2e3245; --term-text: #eeffff; --term-muted: #676e95; --term-prompt: #82aaff;
+  --term-cmd: #c3e88d; --term-str: #ffcb6b;
+}
 
 [data-palette="herdr"],
 [data-palette="catppuccin"],
@@ -190,7 +277,15 @@
 [data-palette="solarized"],
 [data-palette="kanagawa"],
 [data-palette="rose-pine"],
-[data-palette="vesper"] {
+[data-palette="vesper"],
+[data-palette="everforest"],
+[data-palette="ayu"],
+[data-palette="github-dark"],
+[data-palette="monokai-pro"],
+[data-palette="night-owl"],
+[data-palette="oxocarbon"],
+[data-palette="poimandres"],
+[data-palette="palenight"] {
   --logo-filter: invert(1) hue-rotate(180deg) brightness(1.08) contrast(0.9) saturate(1.05);
   --logo-opacity: 0.72;
 }
