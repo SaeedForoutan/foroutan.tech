@@ -1,8 +1,8 @@
 {
-  "name": "astro-palette",
+  "name": "foroutan-tech",
   "private": true,
   "license": "AGPL-3.0-or-later",
-  "description": "A minimal Astro theme for personal sites and blogs",
+  "description": "Personal site for foroutan.tech, built on the astro-palette theme",
   "keywords": [
     "astro",
     "withastro",

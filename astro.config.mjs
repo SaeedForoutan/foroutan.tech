@@ -37,7 +37,7 @@ function pagefindDev() {
 }
 
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://foroutan.tech',
   // v7 default ('jsx') strips spaces between inline elements, which corrupts
   // Pagefind's text extraction of adjacent spans (e.g. job titles + dates).
   compressHTML: true,

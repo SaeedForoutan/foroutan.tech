@@ -4,6 +4,7 @@ import Layout from '../../components/Layout.astro';
 import TypedLede from '../../components/TypedLede.astro';
 import SkillsMarquee from '../../components/SkillsMarquee.astro';
 import PostCard from '../../components/PostCard.astro';
+import { site } from '../../lib/site';
 
 const posts = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
@@ -11,14 +12,14 @@ const posts = (await getCollection('blog'))
 ---
 
 <Layout
-  title="Blog — Your Name"
-  description="A short description of what you write about."
+  title={`Blog — ${site.name}`}
+  description={site.blogTagline}
   canonicalPath="/blog/"
 >
   <main class="content-shell">
     <section class="page-hero">
       <h1 class="visually-hidden">Blog</h1>
-      <TypedLede text="A short description of what you write about." />
+      <TypedLede text={site.blogTagline} />
     </section>
 
     <section class="section" aria-label="Blog posts">

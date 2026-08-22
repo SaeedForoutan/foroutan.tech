@@ -1,9 +1,10 @@
 ---
 import Layout from '../components/Layout.astro';
+import { site } from '../lib/site';
 ---
 
 <Layout
-  title="404 — Palette"
+  title={`404 — ${site.name}`}
   description="Page not found."
   canonicalPath="/404/"
 >

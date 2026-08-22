@@ -1,9 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import portrait from '../assets/portrait.png';
 import Layout from '../components/Layout.astro';
 import TypedLede from '../components/TypedLede.astro';
 import SkillsMarquee from '../components/SkillsMarquee.astro';
 import { formatPostDate, postSlug } from '../lib/posts';
+import { site } from '../lib/site';
 
 const posts = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
@@ -13,43 +16,46 @@ const posts = (await getCollection('blog'))
 const personSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Your Name',
-  jobTitle: 'Your Job Title',
-  url: 'https://example.com',
-  sameAs: [
-    'https://github.com/your-username',
-    'https://linkedin.com/in/your-profile',
-  ],
+  name: site.name,
+  jobTitle: site.jobTitle,
+  url: site.url,
+  sameAs: [site.github, site.linkedin],
   // Escape < so no value can ever close the inline <script> tag.
 }).replace(/</g, '\\u003c');
 ---
 
-<Layout
-  title="Palette — Your Name"
-  description="A short tagline describing you and what you write about."
-  canonicalPath="/"
->
+<Layout title={site.name} description={site.tagline} canonicalPath="/">
   <script type="application/ld+json" is:inline set:html={personSchema} />
   <main class="content-shell">
     <div class="page-hero">
       <h1 class="visually-hidden">Home</h1>
-      <TypedLede text="A short tagline describing you and what you write about." />
+      <div class="hero-split">
+        <TypedLede text={site.tagline} />
+        <Image
+          class="hero-portrait"
+          src={portrait}
+          alt={site.name}
+          widths={[300, 450, 606]}
+          sizes="(max-width: 860px) 240px, 400px"
+          loading="eager"
+        />
+      </div>
     </div>
 
-    <section class="section" aria-label="Recent posts">
-      {posts.length === 0 ? (
+    <section class="section" aria-label="Site sections">
+      <nav class="commit-tree" aria-label="Site sections">
+        <a class="commit-tree-head" href="/blog/" title="All posts">Blog</a>
+        {posts.map((post) => (
+          <a href={`/blog/${postSlug(post)}/`}>
+            {post.data.title}
+            <span class="commit-tree-date">{formatPostDate(post.data.date)}</span>
+          </a>
+        ))}
+        <a href="/projects/">Projects</a>
+        <a href="/about/">About</a>
+      </nav>
+      {posts.length === 0 && (
         <p class="empty-note">No posts yet, check back soon.</p>
-      ) : (
-        <nav class="commit-tree" aria-label="Recent posts">
-          <a class="commit-tree-head" href="/blog/" title="All posts">Blog</a>
-          {posts.map((post) => (
-            <a href={`/blog/${postSlug(post)}/`}>
-              {post.data.title}
-              <span class="commit-tree-date">{formatPostDate(post.data.date)}</span>
-            </a>
-          ))}
-          <a href="/about/">About</a>
-        </nav>
       )}
     </section>
 

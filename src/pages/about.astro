@@ -2,17 +2,18 @@
 import Layout from '../components/Layout.astro';
 import TypedLede from '../components/TypedLede.astro';
 import SkillsMarquee from '../components/SkillsMarquee.astro';
+import { site } from '../lib/site';
 ---
 
 <Layout
-  title="About — Your Name"
-  description="A one-line summary of who you are and what you do."
+  title={`About — ${site.name}`}
+  description={site.aboutTagline}
   canonicalPath="/about/"
 >
   <main class="content-shell" data-pagefind-body>
     <div class="page-hero">
       <h1 class="visually-hidden">About</h1>
-      <TypedLede text="A one-line summary of who you are and what you do." />
+      <TypedLede text={site.aboutTagline} />
     </div>
 
     <div class="section" style="max-width: var(--max);">
@@ -20,27 +21,64 @@ import SkillsMarquee from '../components/SkillsMarquee.astro';
         <div class="about-me">
           <div class="about-card">
             <h3>About</h3>
+            {/* TODO: replace these three paragraphs with your own bio. */}
             <div class="about-prose">
-              <p>Introduce yourself here. Say who you are, where you're based, and what kind of work you do. A couple of sentences is plenty for an opener.</p>
-              <p>Use this paragraph for what you're working on right now: projects, interests, the tools you reach for most often.</p>
-              <p>Close with what this site is for and how people can reach you. Replace the social links in the header with your own profiles.</p>
+              <p>
+                I'm {site.name}. This is my corner of the internet — a place to keep
+                what I build and what I figure out along the way.
+              </p>
+              <p>
+                Most of my time goes to software: writing it, taking it apart, and
+                working out why it did that. The <a class="inline-link" href="/projects/">projects</a>
+                page has what I've shipped; the <a class="inline-link" href="/blog/">blog</a> has
+                the notes that didn't fit anywhere else.
+              </p>
+              <p>
+                If you want to get in touch, <a class="inline-link" href={`mailto:${site.email}`}>email
+                me</a> — that's the surest way to reach me.
+              </p>
             </div>
           </div>
         </div>
 
         <aside>
           <div class="sidebar-card">
+            <h3>Elsewhere</h3>
+            <div class="edu-entry">
+              <p class="edu-degree">GitHub</p>
+              <p class="edu-school">
+                <a href={site.github} target="_blank" rel="noopener" style="color: var(--accent);">
+                  {site.github.replace('https://', '')}
+                </a>
+              </p>
+            </div>
+            <div class="edu-entry">
+              <p class="edu-degree">LinkedIn</p>
+              <p class="edu-school">
+                <a href={site.linkedin} target="_blank" rel="noopener" style="color: var(--accent);">
+                  {site.linkedin.replace('https://', '')}
+                </a>
+              </p>
+            </div>
+            <div class="edu-entry">
+              <p class="edu-degree">Email</p>
+              <p class="edu-school">
+                <a href={`mailto:${site.email}`} style="color: var(--accent);">{site.email}</a>
+              </p>
+            </div>
+          </div>
+
+          {/* Education card — uncomment and fill in if you want one.
+          <div class="sidebar-card">
             <h3>Education</h3>
             <div class="edu-entry">
               <p class="edu-degree">Degree, Field of Study</p>
-              <p class="edu-school"><a href="https://example.edu" target="_blank" rel="noopener" style="color: var(--accent);">University Name</a> · Year</p>
+              <p class="edu-school">
+                <a href="https://example.edu" target="_blank" rel="noopener" style="color: var(--accent);">University Name</a> · Year
+              </p>
             </div>
-            <div class="edu-entry">
-              <p class="edu-degree">Degree, Field of Study</p>
-              <p class="edu-school"><a href="https://example.edu" target="_blank" rel="noopener" style="color: var(--accent);">University Name</a> · Year</p>
-            </div>
-
           </div>
+          */}
         </aside>
       </div>
     </div>

@@ -929,6 +929,23 @@ button.nav-icon-link {
     color: var(--muted);
 }
 
+/* Home hero: intro text beside the portrait. The image is a
+   background-removed cutout, so it sits straight on the page background
+   and follows whichever palette is active. */
+.hero-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.hero-portrait {
+    display: block;
+    height: clamp(260px, 30vw, 400px);
+    width: auto;
+    justify-self: end;
+}
+
 /* ===== Blog post list ===== */
 
 .post-list {
@@ -1562,6 +1579,16 @@ button.nav-icon-link {
     .sidebar-card {
         position: static;
         margin-top: 3rem;
+    }
+
+    /* Stack the portrait under the tagline once the two columns get cramped. */
+    .hero-split {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero-portrait {
+        height: 240px;
+        justify-self: start;
     }
 }
 
