@@ -4,8 +4,6 @@ A blog and personal site theme for Astro with a terminal look and 32 switchable 
 
 **[Demo](https://astro-palette.8limb.dev/)**
 
-Based on the website theme from [herdr](https://github.com/ogulcancelik/herdr) by Oğulcan Çelik, distributed under the same AGPL-3.0-or-later license.
-
 ## Screenshots
 
 ![Home page](docs/screenshots/preview.png)
@@ -82,7 +80,7 @@ Posts are markdown files in `src/content/blog/` with `title`, `description`, `da
 src/
   components/     Layout (nav, search, theme switcher), TypedLede, SkillsMarquee
   content/blog/   posts as markdown
-  lib/            tags: skills list and tag helpers
+  lib/            post and tag helpers, skills list, default palette
   pages/          index (home), blog/, tags/, about, 404, rss
 public/
   css/style.css   all styling, including palette definitions
@@ -93,9 +91,9 @@ public/
 
 [AGPL-3.0-or-later](LICENSE).
 
-Credits:
+With thanks to:
 
-- Base theme: [herdr](https://github.com/ogulcancelik/herdr) website theme (AGPL-3.0-or-later)
+- [herdr](https://github.com/ogulcancelik/herdr) by Oğulcan Çelik, the website theme this one grew out of, and the reason it is AGPL-3.0-or-later
 - Palettes, each from its upstream project and used under that project's licence:
   [Catppuccin](https://github.com/catppuccin/palette),
   [Tokyo Night](https://github.com/enkia/tokyo-night-vscode-theme),
