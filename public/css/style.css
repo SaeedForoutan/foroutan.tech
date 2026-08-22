@@ -44,14 +44,6 @@
     --logo-opacity: 0.72;
 }
 
-[data-palette="herdr"] {
-  --bg: #0c0c0b; --bg-elevated: #131312; --ink: #f0ece0; --ink-soft: #dedad0;
-  --muted: #8a8a80; --muted-2: #5c5c55; --line: #252522; --line-strong: #2e2e2b;
-  --accent: #4a9eff; --green: #52c97a; --yellow: #e6b84a; --red: #e05a5a;
-  --term-bg: #0c0c0b; --term-sidebar-bg: #131312; --term-active-bg: #191918;
-  --term-border: #252522; --term-text: #dedad0; --term-muted: #5c5c55; --term-prompt: #4a9eff;
-  --term-cmd: #52c97a; --term-str: #e6b84a;
-}
 [data-palette="catppuccin"] {
   --bg: #11111b; --bg-elevated: #181825; --ink: #f5e0dc; --ink-soft: #cdd6f4;
   --muted: #9399b2; --muted-2: #6c7086; --line: #313244; --line-strong: #45475a;
@@ -290,7 +282,6 @@
   --term-cmd: #c3e88d; --term-str: #ffcb6b;
 }
 
-[data-palette="herdr"],
 [data-palette="catppuccin"],
 [data-palette="terminal"],
 [data-palette="tokyo-night"],
