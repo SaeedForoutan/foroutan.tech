@@ -38,6 +38,8 @@ Open the switcher with the pill in the bottom-left corner, which shows the activ
 
 **Light (13)** — Catppuccin Latte, Tokyo Day, Gruvbox Light, One Light, Solarized Light, Kanagawa Lotus, Rose Pine Dawn, Everforest Light, Ayu Light, GitHub Light, Alucard, Light Owl, Oxocarbon Light
 
+The palette a first-time visitor sees is set in `src/lib/palette.ts` — one entry for `prefers-color-scheme: dark`, one for light. Both the pre-paint script and the switcher read it, so changing it there is enough.
+
 Colors are taken from each scheme's published palette rather than sampled from screenshots. Code blocks follow the active palette: `astro.config.mjs` sets Shiki's `css-variables` theme, and the `--astro-code-*` variables are mapped onto the palette in `style.css`.
 
 To add one, define a `[data-palette="your-name"]` block in `public/css/style.css` alongside the others, and add a matching `<button role="option" data-value="your-name">` to the switcher list in `src/components/Layout.astro`. The switcher builds itself from those buttons, so nothing else needs wiring. A block sets 20 variables — background and surface tones, four text weights, two border weights, four accents, and the terminal tones; copy an existing block of the same lightness as a starting point. Dark palettes also need their name adding to the `--logo-filter` rule that inverts the logo.
@@ -63,6 +65,7 @@ The theme ships with placeholder values. Search the project for `example.com`, `
 - `src/pages/index.astro`: tagline and person schema
 - `src/pages/about.astro`: bio and education
 - `src/lib/tags.ts`: skills list for the marquee, which also seeds the `/tags/` archive
+- `src/lib/palette.ts`: the palette applied before a visitor picks one, per `prefers-color-scheme`
 - `src/pages/rss.xml.ts` and `src/pages/blog/[slug].astro`: feed and author metadata
 - `public/robots.txt` and `public/.well-known/security.txt`: domain and contact
 - `public/assets/og.png`: social preview image, 1200x630 (a plain placeholder is included)

@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import { DEFAULT_PALETTE } from '../lib/palette';
 
 interface Props {
   title: string;
@@ -50,13 +51,13 @@ const currentPath = Astro.url.pathname;
     <meta name="twitter:image" content={ogImageUrl} />
 
     <link rel="preload" href="/assets/jbm.woff2" as="font" type="font/woff2" crossorigin />
-    <script is:inline>
+    <script is:inline define:vars={{ DEFAULT_PALETTE }}>
       (() => {
         const apply = () => {
           const saved = localStorage.getItem('site-palette');
           const system = window.matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'vesper'
-            : 'rose-pine-dawn';
+            ? DEFAULT_PALETTE.dark
+            : DEFAULT_PALETTE.light;
           document.documentElement.setAttribute('data-palette', saved || system);
         };
         apply();
@@ -409,6 +410,8 @@ const currentPath = Astro.url.pathname;
     </script>
 
     <script>
+      import { DEFAULT_PALETTE } from '../lib/palette';
+
       let controller: AbortController | undefined;
 
       function initThemeSwitcher() {
@@ -429,7 +432,7 @@ const currentPath = Astro.url.pathname;
         let committed = saved || defaultPalette();
 
         function defaultPalette() {
-          return media.matches ? 'vesper' : 'rose-pine-dawn';
+          return media.matches ? DEFAULT_PALETTE.dark : DEFAULT_PALETTE.light;
         }
 
         function setPalette(value: string) {
