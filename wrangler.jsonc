@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "foroutan-tech",
+  "compatibility_date": "2026-08-22",
+  // Static site: there is no Worker script, just the build output. Wrangler
+  // serves `dist/` straight from Cloudflare's edge.
+  "assets": {
+    "directory": "./dist",
+    // Serve Astro's 404.html for unmatched paths instead of a bare 404.
+    "not_found_handling": "404-page"
+  }
+}
