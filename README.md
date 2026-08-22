@@ -1,6 +1,6 @@
 # Astro Palette
 
-A blog and personal site theme for Astro with a terminal look and 30 switchable color palettes. The build output is fully static, with no client-side framework and no analytics.
+A blog and personal site theme for Astro with a terminal look and 33 switchable color palettes. The build output is fully static, with no client-side framework and no analytics.
 
 **[Demo](https://astro-palette.8limb.dev/)**
 
@@ -22,7 +22,7 @@ Based on the website theme from [herdr](https://github.com/ogulcancelik/herdr) b
 
 ## Features
 
-- [30 color palettes](#palettes), defined as plain CSS variables and switchable at runtime
+- [33 color palettes](#palettes), defined as plain CSS variables and switchable at runtime
 - Home, blog, and about pages, an RSS feed, and a sitemap
 - A browsable `/tags/` archive, and tag chips on posts
 - Client-side search via [Pagefind](https://pagefind.app), opened with Ctrl/Cmd+K, with shell-style history recall on the arrow keys
@@ -36,7 +36,7 @@ Open the switcher with the pill in the bottom-left corner, which shows the activ
 
 **Dark (19)** — Catppuccin, Terminal, Tokyo Night, Dracula, Nord, Gruvbox, One Dark, Solarized, Kanagawa, Rose Pine, Vesper, Everforest, Ayu Dark, GitHub Dark, Monokai Pro, Night Owl, Oxocarbon, Poimandres, Palenight
 
-**Light (11)** — Catppuccin Latte, Tokyo Day, Gruvbox Light, One Light, Solarized Light, Kanagawa Lotus, Rose Pine Dawn, Everforest Light, Ayu Light, GitHub Light, Monokai Pro Light
+**Light (14)** — Catppuccin Latte, Tokyo Day, Gruvbox Light, One Light, Solarized Light, Kanagawa Lotus, Rose Pine Dawn, Everforest Light, Ayu Light, GitHub Light, Monokai Pro Light, Alucard, Light Owl, Oxocarbon Light
 
 Colors are taken from each scheme's published palette rather than sampled from screenshots. Code blocks follow the active palette: `astro.config.mjs` sets Shiki's `css-variables` theme, and the `--astro-code-*` variables are mapped onto the palette in `style.css`.
 

@@ -94,6 +94,13 @@
   --term-bg: #282a36; --term-active-bg: #383a4a; --term-border: #44475a; --term-text: #f8f8f2; --term-muted: #6272a4; --term-prompt: #bd93f9;
   --term-cmd: #50fa7b; --term-str: #f1fa8c;
 }
+[data-palette="alucard"] {
+  --bg: #fffbeb; --bg-elevated: #ece9df; --ink: #1f1f1f; --ink-soft: #1f1f1f;
+  --muted: #6c664b; --muted-2: #9a9585; --line: #ceccc0; --line-strong: #bcbab3;
+  --accent: #644ac9; --green: #14710a; --yellow: #846e15; --red: #cb3a2a;
+  --term-bg: #fffbeb; --term-active-bg: #dedccf; --term-border: #ceccc0; --term-text: #1f1f1f; --term-muted: #9a9585; --term-prompt: #644ac9;
+  --term-cmd: #14710a; --term-str: #846e15;
+}
 [data-palette="nord"] {
   --bg: #2e3440; --bg-elevated: #343b49; --ink: #ffffff; --ink-soft: #eceff4;
   --muted: #8792a8; --muted-2: #5f6a80; --line: #434c5e; --line-strong: #4c566a;
@@ -244,12 +251,29 @@
   --term-bg: #011627; --term-active-bg: #0e293f; --term-border: #1d3b53; --term-text: #d6deeb; --term-muted: #4b6479; --term-prompt: #82aaff;
   --term-cmd: #addb67; --term-str: #ecc48d;
 }
+[data-palette="night-owl-light"] {
+  /* Light Owl's own mid-greys top out at 2.43:1 on its background, so --muted
+     borrows #5f7e97 from Night Owl proper -- same extension, same family, the
+     way catppuccin-latte takes its --ink from Mocha. */
+  --bg: #fbfbfb; --bg-elevated: #f6f6f6; --ink: #011627; --ink-soft: #403f53;
+  --muted: #5f7e97; --muted-2: #90a7b2; --line: #e0e0e0; --line-strong: #d9d9d9;
+  --accent: #4876d6; --green: #08916a; --yellow: #daaa01; --red: #e64d49;
+  --term-bg: #fbfbfb; --term-active-bg: #e0e7ea; --term-border: #e0e0e0; --term-text: #403f53; --term-muted: #90a7b2; --term-prompt: #4876d6;
+  --term-cmd: #08916a; --term-str: #daaa01;
+}
 [data-palette="oxocarbon"] {
   --bg: #161616; --bg-elevated: #262626; --ink: #ffffff; --ink-soft: #f2f4f8;
   --muted: #8d8d8d; --muted-2: #6f6f6f; --line: #393939; --line-strong: #525252;
   --accent: #33b1ff; --green: #42be65; --yellow: #ff832b; --red: #ee5396;
   --term-bg: #161616; --term-active-bg: #333333; --term-border: #393939; --term-text: #f2f4f8; --term-muted: #6f6f6f; --term-prompt: #33b1ff;
   --term-cmd: #42be65; --term-str: #ff832b;
+}
+[data-palette="oxocarbon-light"] {
+  --bg: #f2f4f8; --bg-elevated: #ffffff; --ink: #161616; --ink-soft: #393939;
+  --muted: #525252; --muted-2: #8d8d8d; --line: #dde1e6; --line-strong: #c6c6c6;
+  --accent: #0f62fe; --green: #42be65; --yellow: #ff6f00; --red: #ee5396;
+  --term-bg: #f2f4f8; --term-active-bg: #e5e9ee; --term-border: #dde1e6; --term-text: #393939; --term-muted: #8d8d8d; --term-prompt: #0f62fe;
+  --term-cmd: #42be65; --term-str: #ff6f00;
 }
 [data-palette="poimandres"] {
   --bg: #1b1e28; --bg-elevated: #252b37; --ink: #ffffff; --ink-soft: #e4f0fb;
