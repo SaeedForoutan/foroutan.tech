@@ -30,11 +30,11 @@ A blog and personal site theme for Astro with a terminal look and 32 switchable 
 
 ## Palettes
 
-Open the switcher with the pill in the bottom-left corner, which shows the active palette's name. Arrow keys preview a palette live, Enter commits it, and Escape reverts to the previous one. The choice is saved to `localStorage`; with nothing saved, the palette follows `prefers-color-scheme` (Vesper when dark, Rose Pine Dawn when light).
+Open the switcher with the pill in the bottom-left corner, which shows the active palette's name. Palettes are grouped dark and light, alphabetical within each group. Arrow keys preview a palette live, Enter commits it, and Escape reverts to the previous one. The choice is saved to `localStorage`; with nothing saved, the palette follows `prefers-color-scheme` (Vesper when dark, Rose Pine Dawn when light).
 
-**Dark (19)** — Catppuccin, Terminal, Tokyo Night, Dracula, Nord, Gruvbox, One Dark, Solarized, Kanagawa, Rose Pine, Vesper, Everforest, Ayu Dark, GitHub Dark, Monokai, Night Owl, Oxocarbon, Poimandres, Palenight
+**Dark (19)** — Ayu Dark, Catppuccin, Dracula, Everforest, GitHub Dark, Gruvbox, Kanagawa, Monokai, Night Owl, Nord, One Dark, Oxocarbon, Palenight, Poimandres, Rose Pine, Solarized, Terminal, Tokyo Night, Vesper
 
-**Light (13)** — Catppuccin Latte, Tokyo Day, Gruvbox Light, One Light, Solarized Light, Kanagawa Lotus, Rose Pine Dawn, Everforest Light, Ayu Light, GitHub Light, Alucard, Light Owl, Oxocarbon Light
+**Light (13)** — Alucard, Ayu Light, Catppuccin Latte, Everforest Light, GitHub Light, Gruvbox Light, Kanagawa Lotus, Light Owl, One Light, Oxocarbon Light, Rose Pine Dawn, Solarized Light, Tokyo Day
 
 The palette a first-time visitor sees is set in `src/lib/palette.ts` — one entry for `prefers-color-scheme: dark`, one for light. Both the pre-paint script and the switcher read it, so changing it there is enough.
 
