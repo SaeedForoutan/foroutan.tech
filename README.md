@@ -1,6 +1,6 @@
 # Astro Palette
 
-A blog and personal site theme for Astro with a terminal look and 33 switchable color palettes. The build output is fully static, with no client-side framework and no analytics.
+A blog and personal site theme for Astro with a terminal look and 32 switchable color palettes. The build output is fully static, with no client-side framework and no analytics.
 
 **[Demo](https://astro-palette.8limb.dev/)**
 
@@ -22,7 +22,7 @@ Based on the website theme from [herdr](https://github.com/ogulcancelik/herdr) b
 
 ## Features
 
-- [33 color palettes](#palettes), defined as plain CSS variables and switchable at runtime
+- [32 color palettes](#palettes), defined as plain CSS variables and switchable at runtime
 - Home, blog, and about pages, an RSS feed, and a sitemap
 - A browsable `/tags/` archive, and tag chips on posts
 - Client-side search via [Pagefind](https://pagefind.app), opened with Ctrl/Cmd+K, with shell-style history recall on the arrow keys
@@ -34,9 +34,9 @@ Based on the website theme from [herdr](https://github.com/ogulcancelik/herdr) b
 
 Open the switcher with the pill in the bottom-left corner, which shows the active palette's name. Arrow keys preview a palette live, Enter commits it, and Escape reverts to the previous one. The choice is saved to `localStorage`; with nothing saved, the palette follows `prefers-color-scheme` (Vesper when dark, Rose Pine Dawn when light).
 
-**Dark (19)** — Catppuccin, Terminal, Tokyo Night, Dracula, Nord, Gruvbox, One Dark, Solarized, Kanagawa, Rose Pine, Vesper, Everforest, Ayu Dark, GitHub Dark, Monokai Pro, Night Owl, Oxocarbon, Poimandres, Palenight
+**Dark (19)** — Catppuccin, Terminal, Tokyo Night, Dracula, Nord, Gruvbox, One Dark, Solarized, Kanagawa, Rose Pine, Vesper, Everforest, Ayu Dark, GitHub Dark, Monokai, Night Owl, Oxocarbon, Poimandres, Palenight
 
-**Light (14)** — Catppuccin Latte, Tokyo Day, Gruvbox Light, One Light, Solarized Light, Kanagawa Lotus, Rose Pine Dawn, Everforest Light, Ayu Light, GitHub Light, Monokai Pro Light, Alucard, Light Owl, Oxocarbon Light
+**Light (13)** — Catppuccin Latte, Tokyo Day, Gruvbox Light, One Light, Solarized Light, Kanagawa Lotus, Rose Pine Dawn, Everforest Light, Ayu Light, GitHub Light, Alucard, Light Owl, Oxocarbon Light
 
 Colors are taken from each scheme's published palette rather than sampled from screenshots. Code blocks follow the active palette: `astro.config.mjs` sets Shiki's `css-variables` theme, and the `--astro-code-*` variables are mapped onto the palette in `style.css`.
 
@@ -93,5 +93,26 @@ public/
 Credits:
 
 - Base theme: [herdr](https://github.com/ogulcancelik/herdr) website theme (AGPL-3.0-or-later)
+- Palettes, each from its upstream project and used under that project's licence:
+  [Catppuccin](https://github.com/catppuccin/palette),
+  [Tokyo Night](https://github.com/enkia/tokyo-night-vscode-theme),
+  [Dracula and Alucard](https://github.com/dracula/dracula-theme),
+  [Nord](https://github.com/nordtheme/nord),
+  [Gruvbox](https://github.com/morhetz/gruvbox),
+  [One Dark and One Light](https://github.com/atom/one-dark-syntax),
+  [Solarized](https://github.com/altercation/solarized),
+  [Kanagawa](https://github.com/rebelot/kanagawa.nvim),
+  [Rose Pine](https://github.com/rose-pine/neovim),
+  [Vesper](https://github.com/raunofreiberg/vesper),
+  [Everforest](https://github.com/sainnhe/everforest),
+  [Ayu](https://github.com/ayu-theme/ayu-colors),
+  [GitHub](https://github.com/primer/github-vscode-theme),
+  [Monokai](https://github.com/tanvirtin/monokai.nvim),
+  [Night Owl and Light Owl](https://github.com/sdras/night-owl-vscode-theme),
+  [Oxocarbon](https://github.com/nyoom-engineering/oxocarbon),
+  [Poimandres](https://github.com/drcmda/poimandres-theme) and
+  [Palenight](https://github.com/whizkydee/vscode-palenight-theme).
+  All are MIT except Gruvbox, which declares MIT/X11 in its README. Terminal is not
+  derived from a published scheme.
 - Font: [JetBrains Mono](https://www.jetbrains.com/lp/mono/), under the [SIL Open Font License 1.1](https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.txt)
 - Search: [Pagefind](https://pagefind.app) (MIT)
