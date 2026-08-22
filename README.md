@@ -8,7 +8,7 @@ Based on the website theme from [herdr](https://github.com/ogulcancelik/herdr) b
 
 ## Screenshots
 
-![Home page](docs/screenshots/home.png)
+![Home page](docs/screenshots/preview.png)
 
 ![A blog post, with the table of contents generated from its headings](docs/screenshots/post.png)
 
@@ -24,7 +24,7 @@ Based on the website theme from [herdr](https://github.com/ogulcancelik/herdr) b
 
 - 18 color palettes (Catppuccin, Nord, Dracula, Gruvbox, Tokyo Night, Rosé Pine, Kanagawa, Solarized, and others), defined as plain CSS variables and switchable at runtime
 - Home, blog, and about pages, an RSS feed, and a sitemap
-- Tags: optional per-post tags, a browsable `/tags/` archive, and tag chips on posts
+- A browsable `/tags/` archive, and tag chips on posts
 - Client-side search via [Pagefind](https://pagefind.app), opened with Ctrl/Cmd+K, with shell-style history recall on the arrow keys
 - Table of contents on posts, generated from level-two headings
 - Optional [Remark42](https://remark42.com) comments
